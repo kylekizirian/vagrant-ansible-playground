@@ -14,9 +14,20 @@
     - name: Install git
       apt:
         name: git
+        state: latest
+        update-cache: yes
 
-    - name: Pip install robotframework
+    - name: Pip install numpy
       pip:
         executable: pip3
         name:
-          - robotframework
+          - numpy
+
+    - name: Copy Python script to virtual machine
+      copy:
+        src: monte-carlo-sim
+        dest: /home/vagrant/
+        force: yes
+
+    - name: Run Python monte-carlo-sim
+      shell: python3 /home/vagrant/monte-carlo-sim/monte_carlo_sim.py
