@@ -17,6 +17,7 @@ vagrant up
 In VirtualBox window, log on with
 
 username: vagrant
+
 password: vagrant
 
 and run
