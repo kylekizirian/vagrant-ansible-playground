@@ -23,20 +23,17 @@
         state: latest
         update-cache: yes
 
-    - name: Start xfce4
-      shell: startx
+    - name: Pip install numpy
+      pip:
+        executable: pip3
+        name:
+          - numpy
 
-    # - name: Pip install numpy
-    #   pip:
-    #     executable: pip3
-    #     name:
-    #       - numpy
+    - name: Copy Python script to virtual machine
+      copy:
+        src: monte-carlo-sim
+        dest: /home/vagrant/
+        force: yes
 
-    # - name: Copy Python script to virtual machine
-    #   copy:
-    #     src: monte-carlo-sim
-    #     dest: /home/vagrant/
-    #     force: yes
-
-    # - name: Run Python monte-carlo-sim
-    #   shell: python3 /home/vagrant/monte-carlo-sim/monte_carlo_sim.py
+    - name: Run Python monte-carlo-sim
+      shell: python3 /home/vagrant/monte-carlo-sim/monte_carlo_sim.py
