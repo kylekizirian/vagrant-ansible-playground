@@ -6,7 +6,26 @@ Playground for learning Vagrant and Ansible
 
 Install [Vagrant](https://www.vagrantup.com/) and [Ansible](https://www.ansible.com/)
 
-## To Run
+## To Start GUI on VM
+
+```bash
+git clone https://github.com/kylekizirian/vagrant-ansible-playground.git
+cd vagrant-ansible-playground
+vagrant up
+```
+
+In VirtualBox window, log on with
+
+username: vagrant
+password: vagrant
+
+and run
+
+```bash
+startx
+```
+
+## To Run Python Script in VM
 
 ```bash
 git clone https://github.com/kylekizirian/vagrant-ansible-playground.git
